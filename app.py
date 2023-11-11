@@ -13,6 +13,10 @@ cols = ['age', 'sex', 'bmi', 'children', 'smoker', 'region']
 def home():
     return render_template("home.html")
 
+@app.route('/health', methods=["GET"])
+def health():
+    return "HEALTH OK"
+
 @app.route('/predict',methods=['POST'])
 def predict():
     int_features = [x for x in request.form.values()]
